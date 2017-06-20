@@ -50,7 +50,7 @@ class Analytics
 
         return collect(isset($response['rows'])?$response['rows']:[])->map(function (array $dateRow) {
             return [
-                'date' => Carbon::createFromFormat('Ymd', $dateRow[0]),
+                'date' => $dateRow[0],
                 'pageTitle' => $dateRow[1],
                 'visitors' => (int) $dateRow[2],
                 'pageViews' => (int) $dateRow[3],
@@ -68,7 +68,7 @@ class Analytics
         
         return collect(isset($response['rows'])?$response['rows']:[])->map(function (array $dateRow) {
             return [
-                'date' => Carbon::createFromFormat('Ymd', $dateRow[0]),
+                'date' => $dateRow[0],
                 'visits' => (int) $dateRow[1]
                 
             ];
